@@ -1,19 +1,25 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'todo/main.html' %}
+{% block content %}
+
+<div class="header-bar">
     <h1>Register</h1>
+</div>
+<div class="card-body">
     <form action="" method="post">
         {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Register Now">
-        <p>Have an account already?<a href="{% url 'login' %}">Login Now</a></p>
-    </form>
-</body>
-</html>
+        <label>{{ form.username.label }}</label>
+        {{ form.username }}
+    
+        <label>{{ form.password1.label }}</label>
+        {{ form.password1 }}
+    
+        <label>{{ form.password2.label }}</label>
+        {{ form.password2 }}
+        <br><br>
+        <input class="button" type="submit" value="Register Now">
+    
+        <small><p>Have an account already? <a href="{% url 'login' %}">Login Now</a></p></small>
+     </form>
+</div>
+
+{% endblock content %}
