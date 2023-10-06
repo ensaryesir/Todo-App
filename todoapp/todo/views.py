@@ -11,6 +11,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from .models import Task
 
+
 class TaskList(LoginRequiredMixin, ListView):
     model = Task
     context_object_name = 'task'
@@ -22,14 +23,17 @@ class TaskList(LoginRequiredMixin, ListView):
 
         search_input = self.request.GET.get('search-area') or ''
         if search_input:
-            context['task'] = context['task'].filter(title__icontains = search_input)
+            context['task'] = context['task'].filter(
+                title__icontains=search_input)
             context['search_input'] = search_input
         return context
+
 
 class TaskDetail(LoginRequiredMixin, DetailView):
     model = Task
     context_object_name = 'task'
     template_name = 'todo/task.html'
+
 
 class TaskCreate(LoginRequiredMixin, CreateView):
     model = Task
@@ -41,15 +45,18 @@ class TaskCreate(LoginRequiredMixin, CreateView):
         form.instance.user = self.request.user
         return super(TaskCreate, self).form_valid(form)
 
+
 class TaskUpdate(LoginRequiredMixin, UpdateView):
     model = Task
     fields = ['title', 'description', 'complete']
     success_url = reverse_lazy('task')
 
+
 class TaskDelete(LoginRequiredMixin, DeleteView):
     model = Task
     context_object_name = 'task'
     success_url = reverse_lazy('task')
+
 
 class CustomLoginView(LoginView):
     template_name = 'todo/login.html'
@@ -58,6 +65,7 @@ class CustomLoginView(LoginView):
 
     def get_success_url(self):
         return reverse_lazy('task')
+
 
 class RegisterPage(FormView):
     template_name = 'todo/register.html'

@@ -79,8 +79,10 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'todoappDB',  # Oluşturduğunuz veritabanı adı
         'USER': 'postgres',  # PostgreSQL kullanıcı adınız
-        'PASSWORD': '6161',  # PostgreSQL kullanıcı şifreniz (şifresiz kullanıyorsanız boş bırakabilirsiniz)
-        'HOST': 'localhost',  # Veritabanı sunucusunun adresi (yerel makineye bağlıysa bu genellikle localhost'tur)
+        # PostgreSQL kullanıcı şifreniz (şifresiz kullanıyorsanız boş bırakabilirsiniz)
+        'PASSWORD': '6161',
+        # Veritabanı sunucusunun adresi (yerel makineye bağlıysa bu genellikle localhost'tur)
+        'HOST': 'localhost',
         'PORT': '5432',  # PostgreSQL bağlantı noktası (varsayılan olarak 5432)
     }
 }
