@@ -1,0 +1,19 @@
+# Create a virtual environment (you can skip this step because there is already one in the project)
+# python -m venv myenv 
+
+# Activate the virtual environment (Linux)
+# source venv/bin/activate
+
+# Activate the virtual environment (Windows)
+# venv\Scripts\activate
+
+
+# Install Required Packages
+
+# pip install -r requirements.txt
+
+asgiref==3.7.2
+Django==4.2.6
+psycopg2==2.9.9
+sqlparse==0.4.4
+typing_extensions==4.8.0
