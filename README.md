@@ -21,7 +21,7 @@ git clone https://github.com/ensaryesir/Todo-App.git
 We recommend creating a virtual environment for the project. A virtual environment is used to isolate project-specific dependencies. Use the following commands to create a virtual environment:
 
 ```shell
-# Create a virtual environment (you can skip this step because there is already one in the project)
+# Create a virtual environment
 python -m venv myenv 
 
 # Activate the virtual environment (Linux)
